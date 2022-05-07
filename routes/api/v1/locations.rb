@@ -9,7 +9,11 @@ class App
 
     r.post do
       locations = LocationRepository.new
-      locations.save!(@current_user, r.params)
+      persisting = locations.save!(@current_user, r.params)
+      unless persisting[:status] == :success
+        response.status = persisting[:status] || 500
+        next
+      end
     end
   end
 end

@@ -12,6 +12,7 @@ class App
 
     r.on do
       ItemRepository.new
+                    .repository
                     .all
     end
   end
