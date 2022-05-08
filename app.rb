@@ -32,7 +32,7 @@ class App < Roda
   route do |r|
     # GET / request
     r.root do
-      { healthcheck: :success }
+      { healthcheck: 200 }
     end
 
     r.hash_routes

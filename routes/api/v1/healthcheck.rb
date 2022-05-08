@@ -3,7 +3,7 @@ class App
 
   hash_routes('/api/v1').on 'healthcheck' do |r|
     r.on do
-      { status: :success }
+      { status: 200 }
     end
   end
 end
