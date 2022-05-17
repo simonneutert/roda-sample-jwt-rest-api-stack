@@ -1,4 +1,4 @@
-class ItemRepository
+class ItemRepository < BaseRepository
   attr_reader :repository
 
   def initialize
@@ -13,7 +13,7 @@ class ItemRepository
             longitude: d['price'] }
         end
       )
-    { status: :success }
+    { status: 200 }
   end
 
   def for_user(current_user)

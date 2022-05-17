@@ -7,7 +7,7 @@ class LocationRepositoryError < StandardError
   end
 end
 
-class LocationRepository
+class LocationRepository < BaseRepository
   attr_reader :repository
 
   def initialize
@@ -15,33 +15,36 @@ class LocationRepository
   end
 
   def save!(current_user, data)
-    begin
+    result(200, 400) do
       validate_for_save!(current_user, data)
-    rescue LocationRepositoryError => e
-      return { status: e.error_data[:status] }
+      @repository
+        .multi_insert(
+          data['locations'].map do |d|
+            { latitude: d['latitude'],
+              longitude: d['longitude'],
+              user_id: current_user[:id] }
+          end
+        )
     end
-
-    @repository
-      .multi_insert(
-        data['locations'].map do |d|
-          { latitude: d['latitude'],
-            longitude: d['longitude'],
-            user_id: current_user[:id] }
-        end
-      )
-    { status: :success }
   end
 
   def for_user(current_user)
-    @repository
-      .where(user_id: current_user[:id])
-      .all
+    result(200, 400) do
+      validate_current_user!(current_user)
+      @repository
+        .where(user_id: current_user[:id])
+        .all
+    end
   end
 
   private
 
+  def validate_current_user!(current_user)
+    raise LocationRepositoryError.new({ status: 401 }), 'current_user NOT present!' unless current_user
+  end
+
   def validate_for_save!(current_user, data)
-    raise LocationRepositoryError.new({ status: 401 }), 'current_user not present!' unless current_user
+    validate_current_user!(current_user)
     raise LocationRepository.mew({ status: 400 }), 'data is NOT a Hash!' unless data.is_a?(Hash)
 
     unless data['locations'].is_a?(Array)

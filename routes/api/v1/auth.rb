@@ -3,7 +3,7 @@ class App
 
   hash_routes('/api/v1').on 'auth' do |r|
     r.on do
-      { status: :success }
+      { status: 200 }
     end
 
     r.post do
@@ -12,7 +12,7 @@ class App
 
     r.post 'decode' do
       JwtService.new.decode(r.headers['authorization'])
-      { status: :success }
+      { status: 200 }
     rescue StandardError
       { status: :fail }
     end
