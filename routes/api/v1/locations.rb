@@ -4,7 +4,8 @@ class App
   hash_routes('/api/v1').on 'locations' do |r|
     r.get do
       locations = LocationRepository.new
-      locations.for_user(@current_user, 100)
+      results = locations.for_user(@current_user, 100)
+      { locations: results }
     end
 
     r.post do
