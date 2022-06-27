@@ -21,7 +21,7 @@ class ItemRepository
         .where(user_id: current_user[:id])
 
     if limit > 0
-      q.limit(limit)
+      q.limit(limit).all
     else
       q.all
     end
