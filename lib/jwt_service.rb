@@ -6,7 +6,7 @@ class JwtService
   def encode(payload)
     # The secret must be a string. A JWT::DecodeError will be raised if it isn't provided.
     stamp_current_time!(payload)
-    expire_in_minutes!(payload, 15)
+    expire_in_minutes!(payload, 60)
 
     JWT.encode(payload, @hmac_secret, 'HS256')
   end
