@@ -42,10 +42,10 @@ class LocationRepository
 
   def validate_for_save!(current_user, data)
     raise LocationRepositoryError.new({ status: 401 }), 'current_user not present!' unless current_user
-    raise LocationRepository.mew({ status: 400 }), 'data is NOT a Hash!' unless data.is_a?(Hash)
+    raise LocationRepository.new({ status: 400 }), 'data is NOT a Hash!' unless data.is_a?(Hash)
 
     unless data['locations'].is_a?(Array)
-      raise LocationRepository.mew({ status: 400 }),
+      raise LocationRepository.new({ status: 400 }),
             "data['locations'] is NOT an Array!"
     end
   end
