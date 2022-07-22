@@ -1,10 +1,18 @@
 class App
   plugin :hash_routes
 
+  @current_user = false
+
   def auth_jwt(request:)
     @current_user = JwtAuthService.new(request.headers).auth!
   rescue StandardError => e
     response.status = 401
+  end
+
+  def response_valid?(response, invalid_gte_status = 400)
+    return true if response.empty?
+
+    response.status && response.status < invalid_gte_status
   end
 
   hash_branch('api') do |r|
@@ -14,8 +22,8 @@ class App
       end
 
       # auth everything else
-      response_error_status = response.status && response.status >= 400
-      next if !!auth_jwt(request: r) && response_error_status
+      auth_jwt(request: r)
+      next unless @current_user && response_valid?(response, 400)
 
       r.hash_routes('/api/v1')
     end
