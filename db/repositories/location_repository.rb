@@ -32,10 +32,10 @@ class LocationRepository
     { status: :success }
   end
 
-  def for_user(current_user)
-    @repository
-      .where(user_id: current_user[:id])
-      .all
+  def for_user(current_user, limit = 1000)
+    q = @repository.where(user_id: current_user[:id])
+    q = q.limit(limit) if limit
+    q.all
   end
 
   private
