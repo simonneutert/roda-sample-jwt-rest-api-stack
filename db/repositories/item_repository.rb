@@ -17,13 +17,8 @@ class ItemRepository
   end
 
   def for_user(current_user, limit = 1000)
-    q = @repository
-        .where(user_id: current_user[:id])
-
-    if limit > 0
-      q.limit(limit).all
-    else
-      q.all
-    end
+    q = @repository.where(user_id: current_user[:id])
+    q = q.limit(limit) if limit
+    q.all
   end
 end
