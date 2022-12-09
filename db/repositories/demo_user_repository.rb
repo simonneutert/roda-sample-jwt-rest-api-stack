@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DemoUserRepository
   attr_reader :repository
 

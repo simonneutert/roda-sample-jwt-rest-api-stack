@@ -37,6 +37,9 @@ GEM
     racc (1.6.0)
     rack (2.2.3)
     rack-unreloader (1.8.0)
+    rackup (0.1.0)
+      rack
+      webrick
     rainbow (3.1.1)
     rake (13.0.6)
     regexp_parser (2.3.1)
@@ -93,6 +96,7 @@ DEPENDENCIES
   pry (~> 0.14.1)
   puma (~> 5.6)
   rack-unreloader (~> 1.8)
+  rackup (~> 0.1.0)
   rake (~> 13.0)
   roda (~> 3.55)
   sequel (~> 5.56)

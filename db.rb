@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def setup_demo
   # create an items table
   DB.create_table :items do

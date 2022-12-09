@@ -3,6 +3,8 @@
 # https://httpie.io/docs/cli
 # https://github.com/stedolan/jq
 
+bundle exec rake db:migrate 
+
 LOCALHOST_BEARER=$(http -f POST localhost:9292/api/v1/auth email=abc@test.test password=123 | jq -r .token)  
 echo "Current token: $LOCALHOST_BEARER" 
 sleep 1

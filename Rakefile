@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rake'
 require 'sequel'
 require_relative 'constants'

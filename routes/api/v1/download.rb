@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class App
   plugin :hash_routes
 
@@ -8,4 +10,3 @@ class App
     end
   end
 end
-

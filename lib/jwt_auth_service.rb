@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class JwtAuthService
   SINGLE_DEVICE_SIGNED_IN = false
 
