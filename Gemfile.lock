@@ -16,7 +16,7 @@ GEM
       kramdown (~> 2.0)
     method_source (1.0.0)
     mini_portile2 (2.8.8)
-    nio4r (2.5.8)
+    nio4r (2.7.4)
     nokogiri (1.18.3)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
@@ -32,7 +32,7 @@ GEM
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    puma (5.6.4)
+    puma (5.6.9)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (2.2.13)
@@ -45,7 +45,7 @@ GEM
     regexp_parser (2.3.1)
     reverse_markdown (2.1.1)
       nokogiri
-    rexml (3.2.5)
+    rexml (3.3.9)
     roda (3.55.0)
       rack
     rubocop (1.28.2)
@@ -80,9 +80,8 @@ GEM
     thor (1.2.1)
     tilt (2.0.10)
     unicode-display_width (2.1.0)
-    webrick (1.7.0)
-    yard (0.9.27)
-      webrick (~> 1.7.0)
+    webrick (1.8.2)
+    yard (0.9.37)
 
 PLATFORMS
   arm64-darwin-21
