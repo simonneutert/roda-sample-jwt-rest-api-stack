@@ -45,7 +45,7 @@ GEM
     regexp_parser (2.3.1)
     reverse_markdown (2.1.1)
       nokogiri
-    rexml (3.3.9)
+    rexml (3.4.2)
     roda (3.55.0)
       rack
     rubocop (1.28.2)
