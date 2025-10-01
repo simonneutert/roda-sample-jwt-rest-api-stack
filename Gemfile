@@ -10,7 +10,7 @@ gem 'rackup', '~> 2.2.1'
 gem 'rake', '~> 13.0'
 gem 'roda', '~> 3.55'
 gem 'sequel', '~> 5.96'
-gem 'sqlite3', '~> 1.4'
+gem 'sqlite3', '~> 2.7'
 
 group :development do
   gem 'pry', '~> 0.14.1'
