@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 gem 'bcrypt', '~> 3.1'
 gem 'jwt', '~> 2.3'
-gem 'puma', '~> 5.6'
+gem 'puma', '~> 7.0'
 gem 'rack-unreloader', '~> 1.8'
 gem 'rackup', '~> 0.1.0'
 gem 'rake', '~> 13.0'
