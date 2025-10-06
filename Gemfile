@@ -13,6 +13,6 @@ gem 'sequel', '~> 5.97'
 gem 'sqlite3', '~> 2.7'
 
 group :development do
-  gem 'pry', '~> 0.14.1'
+  gem 'pry', '~> 0.15.2'
   gem 'solargraph', '~> 0.44.3', require: false
 end
