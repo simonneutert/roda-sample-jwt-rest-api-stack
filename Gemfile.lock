@@ -15,7 +15,7 @@ GEM
       rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
-    method_source (1.0.0)
+    method_source (1.1.0)
     mini_portile2 (2.8.9)
     nio4r (2.7.4)
     nokogiri (1.18.9)
@@ -30,7 +30,7 @@ GEM
     parallel (1.22.1)
     parser (3.1.2.0)
       ast (~> 2.4.1)
-    pry (0.14.1)
+    pry (0.15.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
     puma (7.0.4)
@@ -96,7 +96,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1)
   jwt (~> 2.3)
-  pry (~> 0.14.1)
+  pry (~> 0.15.2)
   puma (~> 7.0)
   rack-unreloader (~> 2.1)
   rackup (~> 2.2.1)
