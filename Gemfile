@@ -9,7 +9,7 @@ gem 'rack-unreloader', '~> 2.1'
 gem 'rackup', '~> 2.2.1'
 gem 'rake', '~> 13.3'
 gem 'roda', '~> 3.96'
-gem 'sequel', '~> 5.96'
+gem 'sequel', '~> 5.97'
 gem 'sqlite3', '~> 2.7'
 
 group :development do
