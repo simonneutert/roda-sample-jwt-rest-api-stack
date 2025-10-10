@@ -14,5 +14,5 @@ gem 'sqlite3', '~> 2.7'
 
 group :development do
   gem 'pry', '~> 0.15.2'
-  gem 'solargraph', '~> 0.44.3', require: false
+  gem 'solargraph', '~> 0.57.0', require: false
 end
